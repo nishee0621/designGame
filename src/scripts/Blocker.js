@@ -52,7 +52,7 @@ export class Blocker {
     setScaling(){
         
             // this.sprite.scale.set(0.25);
-            this.dx = -10;
+            this.dx = -5;
         
     }
 
