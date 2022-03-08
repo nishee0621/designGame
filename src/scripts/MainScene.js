@@ -2,7 +2,7 @@
 import * as PIXI from "pixi.js";
 import { Hero } from "./Hero";
 import { Blockers } from "./Blockers";
-// import { FinalScene } from "./FinalScene";
+import { FinalScene } from "./FinalScene";
 import { Background } from "./Background";
 // import { LabelScore } from "./LabelScore";
 // import { LabelScore } from "./LabelScore";
@@ -33,26 +33,27 @@ export class MainScene {
         this.hero = new Hero();
         this.container.addChild(this.hero.sprite);
         this.container.interactive = true;
-        // this.container.on("pointerdown", () => {
-        //     console.log("event triggered");
-        //     this.hero.changeLane();
-        // });
-        // // this.hero.sprite.once("die", () => {
-    
-        // //     Global.scene.start(new FinalScene(this.hero.score));
-        // // });
+        this.container.on("pointerdown", () => {
+            // console.log("event triggered");
+            this.hero.changeLane();
+        });
         // this.hero.sprite.once("die", () => {
-        //     setTimeout(() => Global.scene.start(new FinalScene(this.hero.score)),30);
-        // })
+    
+        //     Global.scene.start(new FinalScene(this.hero.score));
+        // });
+        this.hero.sprite.once("die", () => {
+            console.log("dead");
+            setTimeout(() => Global.scene.start(new FinalScene(this.hero.score)),30);
+        })
         
     }
 
     update(dt){
         this.background.update(dt);
         this.blockers.update(dt);
-        // this.hero.update(dt);
-        // this.blockers.checkCollision(this.hero);
-        // this.hero.update();
+        this.hero.update(dt);
+        this.blockers.checkCollision(this.hero);
+
     }
 
     // createScoreView(){

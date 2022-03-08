@@ -6,39 +6,42 @@ import * as PIXI from "pixi.js";
 export class Hero {
     constructor() {
         this.sprite = new PIXI.Sprite(Global.resources["player"].texture);
-        // this.sprite.anchor.set(0,0.5);
+        this.sprite.anchor.set(0,0.5);
         this.sprite.x = 100;
-        this.sprite.y = window.innerHeight/2 -this.sprite.height/2;
-        this.dy = 0;
+        this.dy = 1;
+        this.sprite.y = window.innerHeight/2 + this.dy*(13.25 + this.sprite.height/2);
+        // console.log(this.sprite.y);
         this.score = 0;
-        console.log(this.sprite.width);
-        console.log(this.sprite.y);
-        // this.sprite.y = window.innerHeight - this.sprite.height;
+        // console.log(this.sprite.width);
+        // console.log(this.sprite.y);
     }
 
     changeLane(){
-        if(this.sprite.y == window.innerHeight - this.sprite.height){
-            this.dy = 1;
-            this.sprite.y-=this.LANE_SIZE;
-        }
-        else if(this.sprite.y == window.innerHeight - this.sprite.height-this.LANE_SIZE){
-            this.dy = 0;
-            this.sprite.y+=this.LANE_SIZE;
-        }
+        // car in lower lane
+        this.dy = -this.dy;
+        this.sprite.y = window.innerHeight/2 + this.dy*(13.25 + this.sprite.height/2);
+        // console.log(this.sprite.y);
     }
 
     overlap(blocker){
-       if(this.dy == 0){
-        return this.right > blocker.left + blocker.sprite.width/2 &&
-            this.left  < blocker.right && 
-            this.top < blocker.bottom;
-       }
-       else{
-           return this.right > blocker.left + blocker.sprite.width/2 &&
-                this.left < blocker.right &&
-                this.bottom > blocker.top;
-       }
-    }
+    //    if(this.dy == 0){
+    //     return this.right > blocker.left + blocker.sprite.width/2 &&
+    //         this.left  < blocker.right && 
+    //         this.top < blocker.bottom;
+    //    }
+    //    else{
+    //        return this.right > blocker.left + blocker.sprite.width/2 &&
+    //             this.left < blocker.right &&
+    //             this.bottom > blocker.top;
+    //    }
+        // console.log(this.sprite.y );
+        // console.log(blocker.sprite.y);
+        // console.log("In overlap func");
+        return this.right >= blocker.left &&
+         this.left <= blocker.right &&
+        Math.abs(this.sprite.y - blocker.sprite.y) <= 0.1
+        
+    } 
 
     // setScale(){
     //     if(window.innerWidth < 700){

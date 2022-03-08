@@ -20,17 +20,17 @@ export class FinalScene{
 
     createBackground() {
         // create a sprite using a texture and addChild to app.stage
-        this.background = new FinalBackground();
+        this.background = new Background();
         this.container.addChild(this.background.container);
     }
 
     createPopUp(){
         this.popup = new PIXI.Graphics();
-        const width = window.innerWidth/2;
+        const width = window.innerWidth;
         // const height = window.innerHeight/2;
-        const height = width/2;
-        const x = window.innerWidth/4;
-        const y = window.innerHeight/4;
+        const height = 103;
+        const x = 0
+        const y = window.innerHeight/2 - 51.5;
 
         this.popup.beginFill(0x000000, 0.5);
         this.popup.drawRect(x,y,width,height);
@@ -39,25 +39,25 @@ export class FinalScene{
 
     createLabelScore(score){
         const x = window.innerWidth/2;
-        const y = window.innerWidth < 700 ? window.innerHeight/4 +15 : window.innerHeight/4 + 40 ;
-        const anchor = 0.5;
-        this.view = new LabelScore(x,y,anchor);
+        const y = window.innerHeight/2 - 51.5;
+        const anchorx = 0.5;
+        this.view = new LabelScore(x,y,anchorx);
         this.container.addChild(this.view.view);
         this.view.render(score);
     }
 
     createText(){
         const text = new PIXI.Text();
-        text.anchor.set(0.5);
+        text.anchor.set(0.5,0);
         text.x = window.innerWidth/2;
-        text.y = window.innerHeight/4 + window.innerWidth/5;
+        text.y = window.innerHeight/2 ;
         text.style = {
             fontFamily : "Verdana",
             fontWeight : "normal",
-            fontSize : window.innerWidth < 700 ? 20 : 34,
-            fill : ["#FFFFFF"]
+            fontSize : 22,
+            fill : ["##000000"]
         }
-        text.text = "Tap to restart!";
+        text.text = "Tap to start again!";
         this.popup.addChild(text);
     }
 }
