@@ -5,5 +5,7 @@ export const LoaderConfig = {
     obstacle4 : require("../sprites/obstacle4.png"),
     road : require("../sprites/road.png"),
     player : require("../sprites/player.png"),
-    union : require("../sprites/union.png")
+    union : require("../sprites/union.png"),
+    obstacle5: require("../sprites/obstacle5.png"),
+
 }

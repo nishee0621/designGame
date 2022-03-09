@@ -5,14 +5,14 @@ import { Collision } from "./Collision";
 
 export class Blocker {
     constructor(x,y){
-        this.sprite = new PIXI.Sprite(Global.resources["obstacle1"].texture);
+        this.sprite = new PIXI.Sprite(Global.resources["obstacle5"].texture);
  
        
         this.setScaling();
         // console.log(this.sprite.height);
         this.sprite.anchor.set(0,0.5);
         this.speed = 1;
-        this.sprite.y = window.innerHeight/2 + y*(17.25 + this.sprite.height/2);
+        this.sprite.y = window.innerHeight/2 + y*(13.75 + this.sprite.height/2);
         console.log(this.sprite.y);
         // console.log(this.sprite.y);
         this.sprite.x = x;
