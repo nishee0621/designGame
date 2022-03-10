@@ -10,11 +10,20 @@ export class Blockers {
         
         this.setScale();
         // this.current = null;
-        this.createBlocker({x: window.innerWidth,y: 1});
+        this.createBlocker({x: window.innerWidth,y: 1, z: 5, w: 2.5 });
     }
 
     createBlocker(data){
-        const blocker = new Blocker(data.x, data.y);
+        let blocker;
+        console.log(this.getTimeElapsed());
+        if(this.getTimeElapsed() < 60)
+            blocker = new Blocker(data.x, data.y, 5, 2.5);
+        else if(this.getTimeElapsed() >= 60 ){
+            let blockerArray = [1,2,3,4,5];
+            let blockerNum = Math.floor(Math.random()*5);
+            blocker = new Blocker(data.x,data.y, blockerArray[blockerNum], 3);
+        } 
+        
         this.container.addChild(blocker.sprite);
         // console.log("blocker created");
 
@@ -25,6 +34,8 @@ export class Blockers {
             this.blockers = this.blockers.filter(b => b!==blocker);
             blocker.sprite.destroy();
         });
+
+        
     }
 
     getRandomData(){
@@ -33,7 +44,6 @@ export class Blockers {
         const y = this.possibleHeight[offset];
         const x = this.rangeOffset.min + Math.round(Math.random()*(this.rangeOffset.max - this.rangeOffset.min)) + this.current.right;
         // console.log(x);
-
         return {x,y};
     }
 
@@ -47,6 +57,13 @@ export class Blockers {
             blocker.move();
         })
 
+    }
+
+    getTimeElapsed(){
+        let time = Date.now() - Global.timestamp;
+        time = time/1000;
+
+        return time;
     }
 
     setScale(){

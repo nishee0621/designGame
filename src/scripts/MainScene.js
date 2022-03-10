@@ -11,6 +11,7 @@ import { Global } from "./Global";
 export class MainScene {
     constructor(){
         this.container = new PIXI.Container();
+        Global.timestamp = Date.now();
         this.createBackground();
         this.createHero();
         this.createBlockers();
@@ -18,7 +19,6 @@ export class MainScene {
     }
 
     createBackground() {
-        // create a sprite using a texture and addChild to app.stage
         this.background = new Background();
         this.container.addChild(this.background.container);
         

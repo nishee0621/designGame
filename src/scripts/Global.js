@@ -1,3 +1,4 @@
 export const Global = {
-    resources : {}
+    resources : {},
+    timestamp : 0
 }

@@ -4,17 +4,14 @@ import { Collision } from "./Collision";
 
 
 export class Blocker {
-    constructor(x,y){
-        this.sprite = new PIXI.Sprite(Global.resources["obstacle5"].texture);
- 
-       
-        this.setScaling();
-        // console.log(this.sprite.height);
+    constructor(x,y, obstacleNum, speed){
+        let obs = "obstacle" + obstacleNum.toString();
+        this.sprite = new PIXI.Sprite(Global.resources[obs].texture);
+        this.dx = -speed;
         this.sprite.anchor.set(0,0.5);
         this.speed = 1;
-        this.sprite.y = window.innerHeight/2 + y*(13.75 + this.sprite.height/2);
+        this.sprite.y = window.innerHeight/2 + y*25.75;
         console.log(this.sprite.y);
-        // console.log(this.sprite.y);
         this.sprite.x = x;
     }
 
@@ -28,19 +25,14 @@ export class Blocker {
     checkCollision(hero){
         if(!this.sprite)
             return;
-        // if(this.b.hit(this.sprite,hero.sprite,true)){
-        //     hero.sprite.emit("die");
-        // }
         if(hero.overlap(this)){
             this.speed = 0;
             this.collison = new Collision(-5,0);
             this.sprite.addChild(this.collison.sprite);
             setTimeout(this.restartGame(hero), 10000);
-            // hero.sprite.emit("die");
+            
         }
-        // else {
-        //     hero.sprite.emit("score");
-        // }
+        
             
     }
 
@@ -52,7 +44,7 @@ export class Blocker {
     setScaling(){
         
             // this.sprite.scale.set(0.25);
-            this.dx = -2.5;
+          
         
     }
 
