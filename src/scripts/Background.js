@@ -6,7 +6,7 @@ export class Background {
         this.container = new PIXI.Container();
         this.sprites = [];
         this.createSprites();
-        this.speed = 3;
+        this.speed = 2;
     }
 
     createSprites(){

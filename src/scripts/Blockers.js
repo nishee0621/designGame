@@ -17,24 +17,21 @@ export class Blockers {
         let blocker;
         console.log(this.getTimeElapsed());
         if(this.getTimeElapsed() < 60)
-            blocker = new Blocker(data.x, data.y, 5, 2.5);
-        else if(this.getTimeElapsed() >= 60 ){
+           { blocker = new Blocker(data.x, data.y, 5, 2.5);
+            this.add(blocker);}
+        else if(this.getTimeElapsed() >= 60 && this.getTimeElapsed() <= 120){
             let blockerArray = [1,2,3,4,5];
             let blockerNum = Math.floor(Math.random()*5);
             blocker = new Blocker(data.x,data.y, blockerArray[blockerNum], 3);
-        } 
-        
-        this.container.addChild(blocker.sprite);
-        // console.log("blocker created");
-
-        this.blockers.push(blocker);
-        this.current = blocker;
-
-        blocker.sprite.once("destroy", ()=> {
-            this.blockers = this.blockers.filter(b => b!==blocker);
-            blocker.sprite.destroy();
-        });
-
+            this.add(blocker)
+        } else {
+            let blockerNum = Math.floor(Math.random()*5);
+            let blocker2 = new Blocker(data.x, data.y,blockerNum + 1,3.5);
+            this.add(blocker2);
+            blocker = new Blocker(this.current.right, data.y, Math.floor(Math.random()*5)+1, 3.5);
+            this.add(blocker)
+            
+        }
         
     }
 
@@ -73,6 +70,19 @@ export class Blockers {
         else {
             this.rangeOffset = {min: 200, max: 300};
         }
+    }
+
+    add(blocker){
+        this.container.addChild(blocker.sprite);
+        // console.log("blocker created");
+
+        this.blockers.push(blocker);
+        this.current = blocker;
+
+        blocker.sprite.once("destroy", ()=> {
+            this.blockers = this.blockers.filter(b => b!==blocker);
+            blocker.sprite.destroy();
+        });
     }
 
     checkCollision(hero){
