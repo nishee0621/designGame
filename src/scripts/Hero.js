@@ -9,6 +9,7 @@ export class Hero {
         this.sprite.anchor.set(0,0.5);
         this.sprite.x = 100;
         this.dy = 1;
+        
         this.sprite.y = window.innerHeight/2 + this.dy*(13.25 + this.sprite.height/2);
         // console.log(this.sprite.y);
         this.score = 0;

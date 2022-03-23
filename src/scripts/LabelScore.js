@@ -5,11 +5,11 @@ export class LabelScore {
         this.view = new PIXI.Text();
         this.view.x = x;
         this.view.y = y;
-        this.view.anchor.set(anchor, 0);
+        this.view.anchor.set(anchor, 1);
         this.view.style = {
             fontFamily : "Verdana",
             fontWeight : "normal",
-            fontSize : 24,
+            fontSize : 20,
             fill : ["##000000"]
         };
         this.render(0);

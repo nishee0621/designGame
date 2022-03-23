@@ -25,39 +25,56 @@ export class FinalScene{
     }
 
     createPopUp(){
-        this.popup = new PIXI.Graphics();
-        const width = window.innerWidth;
+        // this.popup = new PIXI.Graphics();
+        // const width = window.innerWidth;
         // const height = window.innerHeight/2;
-        const height = 103;
-        const x = 0
-        const y = window.innerHeight/2 - 51.5;
+        // // const height = 139;
+        // const x = 0
+        // const y = window.innerHeight/2 - 51.5;
 
-        this.popup.beginFill(0x000000, 0.5);
-        this.popup.drawRect(x,y,width,height);
+        // this.popup.beginFill(0x000000, 0.5);
+        // this.popup.drawRect(x,y,width,height);
+        // this.container.addChild(this.popup);
+        this.popup = new PIXI.Container();
+        
+        this.popup.x = 0;
+        this.popup.y = window.innerHeight/2 - 69.5;
+        // this.popup.height = 139;
+        this.popup.width = window.innerWidth;
         this.container.addChild(this.popup);
+        this.sprite = new PIXI.Sprite(Global.resources["finalbg"].texture);
+        this.sprite.alpha = 0.8
+        this.sprite.x = window.innerWidth/2;
+        this.sprite.anchor.set(0.5,0);
+        this.popup.addChild(this.sprite);
     }
 
     createLabelScore(score){
         const x = window.innerWidth/2;
-        const y = window.innerHeight/2 - 51.5;
+        const y = 65;
         const anchorx = 0.5;
         this.view = new LabelScore(x,y,anchorx);
-        this.container.addChild(this.view.view);
+        this.popup.addChild(this.view.view);
         this.view.render(score);
     }
 
     createText(){
         const text = new PIXI.Text();
         text.anchor.set(0.5,0);
+        // text.x = window.innerWidth/2;
+        // text.y = window.innerHeight/2;
         text.x = window.innerWidth/2;
-        text.y = window.innerHeight/2 ;
+        text.y = 70;
+        // text.x = 
         text.style = {
             fontFamily : "Verdana",
             fontWeight : "normal",
-            fontSize : 22,
-            fill : ["##000000"]
+            fontSize : 18,
+            fill : ["##000000"],
         }
+        text.alpha = 0.7
         text.text = "Tap to start again!";
+        console.log("hy")
         this.popup.addChild(text);
     }
 }
