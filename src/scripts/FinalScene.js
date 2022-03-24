@@ -8,7 +8,7 @@ import { FinalBackground } from "./FinalBackground";
 export class FinalScene{
     constructor(score){
         this.container = new PIXI.Container();
-        this.createBackground();
+        // this.createBackground();
         this.createPopUp();
         this.createLabelScore(score);
         this.createText();
@@ -43,7 +43,7 @@ export class FinalScene{
         this.popup.width = window.innerWidth;
         this.container.addChild(this.popup);
         this.sprite = new PIXI.Sprite(Global.resources["finalbg"].texture);
-        this.sprite.alpha = 0.8
+        // this.sprite.alpha = 0.8
         this.sprite.x = window.innerWidth/2;
         this.sprite.anchor.set(0.5,0);
         this.popup.addChild(this.sprite);
