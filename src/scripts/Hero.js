@@ -42,9 +42,13 @@ export class Hero {
         // console.log(this.sprite.y );
         // console.log(blocker.sprite.y);
         // console.log("In overlap func");
+        // return this.right >= blocker.left &&
+        //  this.left <= blocker.right &&  
+        // Math.abs(this.sprite.y - blocker.sprite.y) <= 0.1
         return this.right >= blocker.left &&
-         this.left <= blocker.right &&
-        Math.abs(this.sprite.y - blocker.sprite.y) <= 0.1
+                this.left <= blocker.right &&
+                this.top < blocker.bottom &&
+                this.bottom > blocker.top
         
     } 
 
@@ -88,7 +92,7 @@ export class Hero {
                 }
             }
             else if(this.dy == 1 && this.sprite.y < window.innerHeight/2 + this.dy*25.75){
-                this.sprite.y = Math.min(this.sprite.y + 5, window.innerHeight/2 + this.dy*25.75);
+                this.sprite.y = Math. min(this.sprite.y + 5, window.innerHeight/2 + this.dy*25.75);
                 if(this.sprite.y == window.innerHeight/2 + this.dy*25.75){
                     this.flag = false;
                 }
