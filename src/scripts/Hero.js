@@ -7,10 +7,12 @@ export class Hero {
     constructor() {
         this.sprite = new PIXI.Sprite(Global.resources["player"].texture);
         this.sprite.anchor.set(0,0.5);
+        // this.sprite.scale.set(0.8);
         this.sprite.x = 100;
         this.dy = 1;
-        
-        this.sprite.y = window.innerHeight/2 + this.dy*(13.25 + this.sprite.height/2);
+        this.flag = false;
+        // this.sprite.y = window.innerHeight/2 + this.dy*(13.25 + this.sprite.height/2);
+        this.sprite.y = window.innerHeight/2 + this.dy*25.75;
         // console.log(this.sprite.y);
         this.score = 0;
         // console.log(this.sprite.width);
@@ -20,7 +22,9 @@ export class Hero {
     changeLane(){
         // car in lower lane
         this.dy = -this.dy;
-        this.sprite.y = window.innerHeight/2 + this.dy*(13.25 + this.sprite.height/2);
+        this.flag = true;
+        
+        // this.sprite.y = window.innerHeight/2 + this.dy*(25.75);
         // console.log(this.sprite.y);
     }
 
@@ -75,5 +79,20 @@ export class Hero {
 
     update(dt){
         ++this.score;
+
+        if(this.flag == true){
+            if(this.dy == -1 && this.sprite.y > window.innerHeight/2 + this.dy*25.75){
+                this.sprite.y = Math.max(this.sprite.y - 5, window.innerHeight/2 + this.dy*25.75);
+                if(this.sprite.y == window.innerHeight/2 + this.dy*25.75){
+                    this.flag = false;
+                }
+            }
+            else if(this.dy == 1 && this.sprite.y < window.innerHeight/2 + this.dy*25.75){
+                this.sprite.y = Math.min(this.sprite.y + 5, window.innerHeight/2 + this.dy*25.75);
+                if(this.sprite.y == window.innerHeight/2 + this.dy*25.75){
+                    this.flag = false;
+                }
+            }
+        }
     }
 }
