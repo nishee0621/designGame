@@ -9,7 +9,7 @@ export class LabelScore {
         this.view.style = {
             fontFamily : "Verdana",
             fontWeight : "normal",
-            fontSize : 20,
+            fontSize : 26,
             fill : ["##000000"]
         };
         this.render(0);

@@ -38,12 +38,14 @@ export class FinalScene{
         this.popup = new PIXI.Container();
         
         this.popup.x = 0;
-        this.popup.y = window.innerHeight/2 - 69.5;
+        this.popup.y = window.innerHeight/2 - 76.014;
         // this.popup.height = 139;
         this.popup.width = window.innerWidth;
         this.container.addChild(this.popup);
+    
         this.sprite = new PIXI.Sprite(Global.resources["finalbg"].texture);
         // this.sprite.alpha = 0.8
+        this.sprite.scale.set(1.467);
         this.sprite.x = window.innerWidth/2;
         this.sprite.anchor.set(0.5,0);
         this.popup.addChild(this.sprite);
@@ -51,7 +53,7 @@ export class FinalScene{
 
     createLabelScore(score){
         const x = window.innerWidth/2;
-        const y = 65;
+        const y = 90;
         const anchorx = 0.5;
         this.view = new LabelScore(x,y,anchorx);
         this.popup.addChild(this.view.view);
@@ -64,12 +66,12 @@ export class FinalScene{
         // text.x = window.innerWidth/2;
         // text.y = window.innerHeight/2;
         text.x = window.innerWidth/2;
-        text.y = 70;
+        text.y = 100;
         // text.x = 
         text.style = {
             fontFamily : "Verdana",
             fontWeight : "normal",
-            fontSize : 18,
+            fontSize : 22,
             fill : ["##000000"],
         }
         text.alpha = 0.7

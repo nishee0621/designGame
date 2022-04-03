@@ -12,7 +12,7 @@ export class Hero {
         this.dy = 1;
         this.flag = false;
         // this.sprite.y = window.innerHeight/2 + this.dy*(13.25 + this.sprite.height/2);
-        this.sprite.y = window.innerHeight/2 + this.dy*25.75;
+        this.sprite.y = window.innerHeight/2 + this.dy*38.007;
         // console.log(this.sprite.y);
         this.score = 0;
         // console.log(this.sprite.width);
@@ -85,15 +85,15 @@ export class Hero {
         ++this.score;
 
         if(this.flag == true){
-            if(this.dy == -1 && this.sprite.y > window.innerHeight/2 + this.dy*25.75){
-                this.sprite.y = Math.max(this.sprite.y - 5, window.innerHeight/2 + this.dy*25.75);
-                if(this.sprite.y == window.innerHeight/2 + this.dy*25.75){
+            if(this.dy == -1 && this.sprite.y > window.innerHeight/2 + this.dy*38.007){
+                this.sprite.y = Math.max(this.sprite.y - 5, window.innerHeight/2 + this.dy*38.007);
+                if(this.sprite.y == window.innerHeight/2 + this.dy*38.007){
                     this.flag = false;
                 }
             }
-            else if(this.dy == 1 && this.sprite.y < window.innerHeight/2 + this.dy*25.75){
-                this.sprite.y = Math. min(this.sprite.y + 5, window.innerHeight/2 + this.dy*25.75);
-                if(this.sprite.y == window.innerHeight/2 + this.dy*25.75){
+            else if(this.dy == 1 && this.sprite.y < window.innerHeight/2 + this.dy*38.007){
+                this.sprite.y = Math. min(this.sprite.y + 5, window.innerHeight/2 + this.dy*38.007);
+                if(this.sprite.y == window.innerHeight/2 + this.dy*38.007){
                     this.flag = false;
                 }
             }

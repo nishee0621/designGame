@@ -17,7 +17,8 @@ export class Background {
     }
     createSprite(i) {
         const sprite = new PIXI.Sprite(Global.resources["road"].texture);
-        // sprite.scale.set(10);
+        sprite.scale.set(1.476);
+        console.log(`Road width: ${sprite.height}`);
         sprite.x = i*sprite.width;
         sprite.y = (window.innerHeight - sprite.height)/2
         this.container.addChild(sprite);

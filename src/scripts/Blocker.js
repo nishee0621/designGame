@@ -10,7 +10,7 @@ export class Blocker {
         this.dx = -speed;
         this.sprite.anchor.set(0,0.5);
         this.speed = 1;
-        this.sprite.y = window.innerHeight/2 + y*25.75;
+        this.sprite.y = window.innerHeight/2 + y*38.007;
         console.log(this.sprite.y);
         this.sprite.x = x;
     }
