@@ -37,37 +37,37 @@ export class FinalScene{
         // this.container.addChild(this.popup);
         this.popup = new PIXI.Container();
         
-        this.popup.x = 0;
-        this.popup.y = window.innerHeight/2 - 76.014;
-        // this.popup.height = 139;
-        this.popup.width = window.innerWidth;
-        this.container.addChild(this.popup);
+        // this.popup.x = 0;
+        // this.popup.y = window.innerHeight/2 - 152.028;
+        // // this.popup.height = 139;
+        // this.popup.width = window.innerWidth;
+        // this.container.addChild(this.popup);
     
         this.sprite = new PIXI.Sprite(Global.resources["finalbg"].texture);
         // this.sprite.alpha = 0.8
         this.sprite.scale.set(1.467);
         this.sprite.x = window.innerWidth/2;
-        this.sprite.y = 0;
-        this.sprite.anchor.set(0.5,0);
-        this.popup.addChild(this.sprite);
+        this.sprite.y = window.innerHeight/2;
+        this.sprite.anchor.set(0.5,0.5);
+        this.container.addChild(this.sprite);
     }
 
     createLabelScore(score){
-        const x = window.innerWidth/2;
-        const y = 90;
+        const x = 0;
+        const y = -5;
         const anchorx = 0.5;
         this.view = new LabelScore(x,y,anchorx);
-        this.popup.addChild(this.view.view);
+        this.sprite.addChild(this.view.view);
         this.view.render(score);
     }
 
     createText(){
         const text = new PIXI.Text();
         text.anchor.set(0.5,0);
+        text.x = 0;
+        text.y = 5;
         // text.x = window.innerWidth/2;
-        // text.y = window.innerHeight/2;
-        text.x = window.innerWidth/2;
-        text.y = 100;
+        // text.y = 100;
         // text.x = 
         text.style = {
             fontFamily : "Verdana",
@@ -78,6 +78,6 @@ export class FinalScene{
         text.alpha = 0.7
         text.text = "Tap to start again!";
         console.log("hy")
-        this.popup.addChild(text);
+        this.sprite.addChild(text);
     }
 }
