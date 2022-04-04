@@ -72,7 +72,7 @@ export class FinalScene{
         text.style = {
             fontFamily : "Verdana",
             fontWeight : "normal",
-            fontSize : 22,
+            fontSize : 18,
             fill : ["##000000"],
         }
         text.alpha = 0.7
