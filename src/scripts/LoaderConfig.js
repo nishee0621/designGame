@@ -7,6 +7,7 @@ export const LoaderConfig = {
     player : require("../sprites/player.png"),
     union : require("../sprites/union.png"),
     obstacle5: require("../sprites/obstacle5.png"),
-    finalbg: require("../sprites/finalbg.png")
+    finalbg: require("../sprites/finalbg.png"),
+    hurray: require("../sprites/Hurray_UI.png")
 
 }

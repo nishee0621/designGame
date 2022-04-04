@@ -43,9 +43,9 @@ export class FinalScene{
         // this.popup.width = window.innerWidth;
         // this.container.addChild(this.popup);
     
-        this.sprite = new PIXI.Sprite(Global.resources["finalbg"].texture);
+        this.sprite = new PIXI.Sprite(Global.resources["hurray"].texture);
         // this.sprite.alpha = 0.8
-        this.sprite.scale.set(1.467);
+        // this.sprite.scale.set(1.467);
         this.sprite.x = window.innerWidth/2;
         this.sprite.y = window.innerHeight/2;
         this.sprite.anchor.set(0.5,0.5);
@@ -53,9 +53,9 @@ export class FinalScene{
     }
 
     createLabelScore(score){
-        const x = 0;
-        const y = -5;
-        const anchorx = 0.5;
+        const x = -145;
+        const y = 15;
+        const anchorx = 0;
         this.view = new LabelScore(x,y,anchorx);
         this.sprite.addChild(this.view.view);
         this.view.render(score);
@@ -63,16 +63,16 @@ export class FinalScene{
 
     createText(){
         const text = new PIXI.Text();
-        text.anchor.set(0.5,0);
-        text.x = 0;
-        text.y = 5;
+        text.anchor.set(0,0);
+        text.x = -145;
+        text.y = 17;
         // text.x = window.innerWidth/2;
         // text.y = 100;
         // text.x = 
         text.style = {
             fontFamily : "Verdana",
             fontWeight : "normal",
-            fontSize : 18,
+            fontSize : 14,
             fill : ["##000000"],
         }
         text.alpha = 0.7
