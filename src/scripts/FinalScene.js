@@ -47,6 +47,7 @@ export class FinalScene{
         // this.sprite.alpha = 0.8
         this.sprite.scale.set(1.467);
         this.sprite.x = window.innerWidth/2;
+        this.sprite.y = 0;
         this.sprite.anchor.set(0.5,0);
         this.popup.addChild(this.sprite);
     }
