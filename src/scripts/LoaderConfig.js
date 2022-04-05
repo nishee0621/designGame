@@ -11,6 +11,8 @@ export const LoaderConfig = {
     hurray: require("../sprites/Hurray_UI.png"),
     mainmenu: require("../sprites/mainmenu.png"),
     finalbg2: require("../sprites/finalbg2.png"),
+    finalbg3: require("../sprites/finalbg3.png"),
+
 
 
 }

@@ -45,7 +45,7 @@ export class FinalScene{
         // this.popup.width = window.innerWidth;
         // this.container.addChild(this.popup);
     
-        this.sprite = new PIXI.Sprite(Global.resources["finalbg2"].texture);
+        this.sprite = new PIXI.Sprite(Global.resources["finalbg3"].texture);
         // this.sprite.alpha = 0.8
         // this.sprite.scale.set(1.467);
         // this.sprite.scale.set(1.3,1.095)
