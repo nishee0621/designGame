@@ -48,7 +48,7 @@ export class FinalScene{
         this.sprite = new PIXI.Sprite(Global.resources["finalbg"].texture);
         // this.sprite.alpha = 0.8
         // this.sprite.scale.set(1.467);
-        // this.sprite.scale.set(1.3,1.095)
+        this.sprite.scale.set(1.095,1.095)
         console.log(`Final sprite height: ${this.sprite.height}, width: ${this.sprite.width}`)
         this.sprite.x = window.innerWidth/2;
         this.sprite.y = window.innerHeight/2;
