@@ -30,7 +30,7 @@ export class App {
         
         // load the sprite
         this.loader = new Loader(this.app.loader);
-        this.loader.preload().then(() => Global.scene.start(new MainScene()));
+        this.loader.preload().then(() => Global.scene.start(new MainMenuScene()));
 
     }
 

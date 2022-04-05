@@ -7,12 +7,12 @@ export const LoaderConfig = {
     player : require("../sprites/player.png"),
     union : require("../sprites/union.png"),
     obstacle5: require("../sprites/obstacle5.png"),
-    finalbg: require("../sprites/finalbg.png"),
-    hurray: require("../sprites/Hurray_UI.png"),
-    mainmenu: require("../sprites/mainmenu.png"),
-    finalbg2: require("../sprites/finalbg2.png"),
+    // finalbg: require("../sprites/finalbg.png"),
+    // hurray: require("../sprites/Hurray_UI.png"),
+    // mainmenu: require("../sprites/mainmenu.png"),
+    // finalbg2: require("../sprites/finalbg2.png"),
     finalbg3: require("../sprites/finalbg3.png"),
-
-
-
+    // mainmenu2: require("../sprites/mainmenu2.png"),
+    mainmenu3: require("../sprites/mainmenu3.png"),
+    button: require("../sprites/Enabled.png"),
 }
