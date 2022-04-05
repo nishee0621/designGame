@@ -10,9 +10,10 @@ export class FinalScene{
         this.container = new PIXI.Container();
         // this.createBackground();
         this.createPopUp();
-        this.createCongratulations();
-        this.createLabelScore(score);
-        this.createText();
+        // this.createCongratulations();
+        // this.createLabelScore(score);
+        // this.createText();
+        // this.createBox();
         this.container.interactive = true;
         this.container.once("pointerdown", () => {
             Global.scene.start(new MainScene());
@@ -44,10 +45,10 @@ export class FinalScene{
         // this.popup.width = window.innerWidth;
         // this.container.addChild(this.popup);
     
-        this.sprite = new PIXI.Sprite(Global.resources["finalbg"].texture);
+        this.sprite = new PIXI.Sprite(Global.resources["finalbg2"].texture);
         // this.sprite.alpha = 0.8
         // this.sprite.scale.set(1.467);
-        this.sprite.scale.set(1.3,1.095)
+        // this.sprite.scale.set(1.3,1.095)
         console.log(`Final sprite height: ${this.sprite.height}, width: ${this.sprite.width}`)
         this.sprite.x = window.innerWidth/2;
         this.sprite.y = window.innerHeight/2;
@@ -81,6 +82,10 @@ export class FinalScene{
         this.view = new LabelScore(x,y,anchorx);
         this.sprite.addChild(this.view.view);
         this.view.render(score);
+    }
+
+    createBox(){
+
     }
 
     createText(){

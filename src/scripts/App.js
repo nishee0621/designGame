@@ -5,6 +5,7 @@ import { Loader } from "./Loader";
 import { MainScene } from "./MainScene";
 import { Global } from "./Global";
 import { SceneManager } from "./SceneManager";
+import { MainMenuScene } from "./MainMenuScene";
 
 export class App {
     run() {
