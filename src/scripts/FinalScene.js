@@ -10,6 +10,7 @@ export class FinalScene{
         this.container = new PIXI.Container();
         // this.createBackground();
         this.createPopUp();
+        this.createCongratulations();
         this.createLabelScore(score);
         this.createText();
         this.container.interactive = true;
@@ -43,17 +44,37 @@ export class FinalScene{
         // this.popup.width = window.innerWidth;
         // this.container.addChild(this.popup);
     
-        this.sprite = new PIXI.Sprite(Global.resources["hurray"].texture);
+        this.sprite = new PIXI.Sprite(Global.resources["finalbg"].texture);
         // this.sprite.alpha = 0.8
         // this.sprite.scale.set(1.467);
+        this.sprite.scale.set(1.3,1.2)
         this.sprite.x = window.innerWidth/2;
         this.sprite.y = window.innerHeight/2;
         this.sprite.anchor.set(0.5,0.5);
         this.container.addChild(this.sprite);
     }
 
+    createCongratulations(){
+        const text = new PIXI.Text();
+        text.anchor.set(0,0);
+        text.x = -80;
+        text.y = -39;
+        // text.x = window.innerWidth/2;
+        // text.y = 100;
+        // text.x = 
+        text.style = {
+            fontFamily : "Verdana",
+            fontWeight : "bold",
+            fontSize : 16,
+            fill : ["#228B22"],
+        }
+        text.text = "Hurray Congratulations!!!";
+        
+        this.sprite.addChild(text);
+    }
+
     createLabelScore(score){
-        const x = -145;
+        const x = -29;
         const y = 15;
         const anchorx = 0;
         this.view = new LabelScore(x,y,anchorx);
@@ -64,7 +85,7 @@ export class FinalScene{
     createText(){
         const text = new PIXI.Text();
         text.anchor.set(0,0);
-        text.x = -145;
+        text.x = -50
         text.y = 17;
         // text.x = window.innerWidth/2;
         // text.y = 100;
