@@ -7,11 +7,11 @@ export class MainMenuScene {
         this.container = new PIXI.Container();
         this.displayBackground();
         this.createButton();
-        this.createText();
+        // this.createText();
     }
 
     displayBackground(){
-        this.sprite = new PIXI.Sprite(Global.resources["mainmenu3"].texture);
+        this.sprite = new PIXI.Sprite(Global.resources["mainmenu4"].texture);
         this.sprite.anchor.set(0.5);
         this.sprite.x = window.innerWidth/2;
         this.sprite.y = window.innerHeight/2;
@@ -19,7 +19,7 @@ export class MainMenuScene {
     }
 
     createButton(){
-        this.button = new PIXI.Sprite(Global.resources["button"].texture);
+        this.button = new PIXI.Sprite(Global.resources["button1"].texture);
         this.button.interactive = true;
         this.button.once("pointerdown", () => {
             console.log("menu screen");

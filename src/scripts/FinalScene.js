@@ -10,7 +10,7 @@ export class FinalScene{
         this.container = new PIXI.Container();
         // this.createBackground();
         this.createPopUp();
-        this.createCongratulations();
+        // this.createCongratulations();
         this.createLabelScore(score);
         this.createText();
         // this.createBox();
@@ -45,10 +45,10 @@ export class FinalScene{
         // this.popup.width = window.innerWidth;
         // this.container.addChild(this.popup);
     
-        this.sprite = new PIXI.Sprite(Global.resources["finalbg"].texture);
+        this.sprite = new PIXI.Sprite(Global.resources["finalbg4"].texture);
         // this.sprite.alpha = 0.8
         // this.sprite.scale.set(1.467);
-        this.sprite.scale.set(1.095,1.095)
+        // this.sprite.scale.set(1.095,1.095)
         console.log(`Final sprite height: ${this.sprite.height}, width: ${this.sprite.width}`)
         this.sprite.x = window.innerWidth/2;
         this.sprite.y = window.innerHeight/2;
@@ -59,7 +59,7 @@ export class FinalScene{
     createCongratulations(){
         const text = new PIXI.Text();
         text.anchor.set(0,0);
-        text.x = -80;
+        text.x = -200;
         text.y = -39;
         // text.x = window.innerWidth/2;
         // text.y = 100;
@@ -76,7 +76,7 @@ export class FinalScene{
     }
 
     createLabelScore(score){
-        const x = -29;
+        const x = -70;
         const y = 15;
         const anchorx = 0;
         this.view = new LabelScore(x,y,anchorx);
@@ -87,7 +87,7 @@ export class FinalScene{
     createText(){
         const text = new PIXI.Text();
         text.anchor.set(0,0);
-        text.x = -50
+        text.x = -90
         text.y = 17;
         // text.x = window.innerWidth/2;
         // text.y = 100;
