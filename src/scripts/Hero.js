@@ -5,10 +5,10 @@ import * as PIXI from "pixi.js";
 
 export class Hero {
     constructor() {
-        this.sprite = new PIXI.Sprite(Global.resources["player"].texture);
+        this.sprite = new PIXI.Sprite(Global.resources["player2"].texture);
         this.sprite.anchor.set(0,0.5);
-        // this.sprite.scale.set(0.8);
-        this.sprite.x = 100;
+        // this.sprite.scale.set(0.25);
+        this.sprite.x = 50;
         this.dy = 1;
         this.flag = false;
         // this.sprite.y = window.innerHeight/2 + this.dy*(13.25 + this.sprite.height/2);

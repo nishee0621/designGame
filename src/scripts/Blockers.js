@@ -10,23 +10,23 @@ export class Blockers {
         
         this.setScale();
         // this.current = null;
-        this.createBlocker({x: window.innerWidth,y: 1, z: 5, w: 2.5 });
+        this.createBlocker({x: window.innerWidth,y: 1, z: 5, w: 2 });
     }
 
     createBlocker(data){
         let blocker;
         console.log(this.getTimeElapsed());
         if(this.getTimeElapsed() < 30)
-           { blocker = new Blocker(data.x, data.y, 5, 2.5);
+           { blocker = new Blocker(data.x, data.y, 5, 2);
             this.add(blocker);}
         else if(this.getTimeElapsed() >= 30 && this.getTimeElapsed() <= 45){
             let blockerArray = [1,2,3,4,5];
             let blockerNum = Math.floor(Math.random()*5);
-            blocker = new Blocker(data.x,data.y, blockerArray[blockerNum], 3);
+            blocker = new Blocker(data.x,data.y, blockerArray[blockerNum], 2.5);
             this.add(blocker)
         } else {
             let blockerNum = Math.floor(Math.random()*5);
-            let blocker2 = new Blocker(data.x, data.y,blockerNum + 1,3.5);
+            let blocker2 = new Blocker(data.x, data.y,blockerNum + 1,3);
             this.add(blocker2);
             blocker = new Blocker(this.current.right, data.y, Math.floor(Math.random()*5)+1, 3.5);
             this.add(blocker)

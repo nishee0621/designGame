@@ -6,6 +6,7 @@ export class Background {
         this.container = new PIXI.Container();
         this.sprites = [];
         this.createSprites();
+        this.addShadow();
         this.speed = 2;
     }
 
@@ -14,6 +15,15 @@ export class Background {
             this.createSprite(i);
         }
         
+    }
+
+    addShadow(){
+        const shadow = new PIXI.Sprite(Global.resources["shadow"].texture);
+        shadow.anchor.set(0,0.5);
+        shadow.scale.set(1,1.5);
+        shadow.x = 0;
+        shadow.y = window.innerHeight/2;
+        this.container.addChild(shadow);
     }
     createSprite(i) {
         const sprite = new PIXI.Sprite(Global.resources["road"].texture);
