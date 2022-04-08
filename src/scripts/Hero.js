@@ -5,7 +5,7 @@ import * as PIXI from "pixi.js";
 
 export class Hero {
     constructor() {
-        this.sprite = new PIXI.Sprite(Global.resources["player2"].texture);
+        this.sprite = new PIXI.Sprite(Global.resources["player"].texture);
         this.sprite.anchor.set(0,0.5);
         // this.sprite.scale.set(0.25);
         this.sprite.x = 50;
