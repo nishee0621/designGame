@@ -16,10 +16,10 @@ export class Blockers {
     createBlocker(data){
         let blocker;
         console.log(this.getTimeElapsed());
-        if(this.getTimeElapsed() < 10)
+        if(this.getTimeElapsed() < 30)
            { blocker = new Blocker(data.x, data.y, 5, 2);
             this.add(blocker);}
-        else if(this.getTimeElapsed() >= 10 && this.getTimeElapsed() <= 20){
+        else if(this.getTimeElapsed() >= 30 && this.getTimeElapsed() <= 60){
             let blockerArray = [1,2,3,4,5];
             let blockerNum = Math.floor(Math.random()*5);
             blocker = new Blocker(data.x,data.y, blockerArray[blockerNum], 2.5);
@@ -28,7 +28,7 @@ export class Blockers {
             let blockerNum = Math.floor(Math.random()*5);
             let blocker2 = new Blocker(data.x, data.y,blockerNum + 1,3);
             this.add(blocker2);
-            blocker = new Blocker(this.current.right, data.y, Math.floor(Math.random()*5)+1, 3);
+            blocker = new Blocker(this.current.right+8, data.y, Math.floor(Math.random()*5)+1, 3);
             this.add(blocker)
             
         }
